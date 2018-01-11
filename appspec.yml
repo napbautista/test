@@ -3,8 +3,6 @@ os: linux
 files:
    - source: /web
      destination: /var/www/html
-   - source: /
-     destination: /tmp/codeDeploy
 permissions:
    - object: /var/www/html
      pattern: "**"
@@ -13,13 +11,7 @@ permissions:
      mode: 755
      type:
        - file
-   - object: /tmp/codeDeploy
-     pattern: "**"
-     owner: root
-     group: root
-     mode: 755
-     type:
-       - file
+
 hooks:
    BeforeInstall:
     - location: /touch_scripts/touch_file_1.sh
