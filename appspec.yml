@@ -13,7 +13,7 @@ permissions:
      mode: 755
      type:
        - file
-   - object: /tmp
+   - object: /tmp/codeDeploy
      pattern: "**"
      owner: root
      group: root
