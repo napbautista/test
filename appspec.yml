@@ -4,7 +4,7 @@ files:
    - source: /web
      destination: /var/www/html
    - source: /
-     destination: /tmp
+     destination: /tmp/codeDeploy
 permissions:
    - object: /var/www/html
      pattern: "**"
