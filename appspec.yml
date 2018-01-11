@@ -14,13 +14,8 @@ permissions:
 hooks:
    BeforeInstall:
     - location: touch_scripts/touch_file_1.sh
-      runas: ec2-user
     - location: httpd_scripts/install_apache.sh
-      runas: ec2-user
     - location: httpd_scripts/start_apache.sh
-      runas: ec2-user
    AfterInstall:
     - location: httpd_scripts/restart_apache.sh
-      runas: ec2-user
     - location: touch_scripts/touch_file_2.sh
-      runas: ec2-user
