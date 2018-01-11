@@ -22,8 +22,8 @@ permissions:
        - file
 hooks:
    BeforeInstall:
-    - location: /tmp/httpd_scripts/install_apache.sh
-    - location: /tmp/httpd_scripts/start_apache.sh
+    - location: /httpd_scripts/install_apache.sh
+    - location: /httpd_scripts/start_apache.sh
    AfterInstall:
-    - location: /tmp/httpd_scripts/restart_apache.sh
+    - location: /httpd_scripts/restart_apache.sh
 
