@@ -3,7 +3,6 @@ os: linux
 files:
    - source: /web
      destination: /var/www/html
-files:
    - source: /
      destination: /tmp
 permissions:
