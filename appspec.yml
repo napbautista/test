@@ -1,0 +1,26 @@
+version: 0.0
+os: linux
+files:
+   - source: /web
+     destination: /var/www/html
+permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: root
+     group: root
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
+    - location: touch_scripts/touch_file_1.sh
+      runas: ec2-user
+    - location: httpd_scripts/install_apache.sh
+      runas: ec2-user
+    - location: httpd_scripts/start_apache.sh
+      runas: ec2-user
+   AfterInstall:
+    - location: httpd_scripts/restart_apache.sh
+      runas: ec2-user
+    - location: touch_scripts/touch_file_2.sh
+      runas: ec2-user
