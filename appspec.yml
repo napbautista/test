@@ -3,6 +3,9 @@ os: linux
 files:
    - source: /web
      destination: /var/www/html
+files:
+   - source: /
+     destination: /tmp
 permissions:
    - object: /var/www/html
      pattern: "**"
@@ -11,11 +14,18 @@ permissions:
      mode: 755
      type:
        - file
+   - object: /tmp
+     pattern: "**"
+     owner: root
+     group: root
+     mode: 755
+     type:
+       - file
 hooks:
    BeforeInstall:
-    - location: touch_scripts/touch_file_1.sh
-    - location: httpd_scripts/install_apache.sh
-    - location: httpd_scripts/start_apache.sh
+
+    - location: /tmp/httpd_scripts/install_apache.sh
+    - location: /tmp/httpd_scripts/start_apache.sh
    AfterInstall:
-    - location: httpd_scripts/restart_apache.sh
-    - location: touch_scripts/touch_file_2.sh
+    - location: /tmp/httpd_scripts/restart_apache.sh
+
