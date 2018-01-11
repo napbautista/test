@@ -27,4 +27,5 @@ hooks:
     - location: /httpd_scripts/start_apache.sh
    AfterInstall:
     - location: /httpd_scripts/restart_apache.sh
+    - location: /touch_scripts/touch_file_2.sh
 
